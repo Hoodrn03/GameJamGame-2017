@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 currentScale;           //used to alter transform
     private bool facingRight = true;        //holds directions of player
 
+	//Check if grounded (on floor)
+	public float threshold;
+
+	private bool isGrounded;
 
     //animation components
     private Animator playerAnimator;
@@ -49,19 +53,23 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
+	void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "Platform") {
+			isGrounded = true;
+		}
+	}
+	void OnCollisionExit(Collision col)
+	{
+		if (col.gameObject.tag == "Platform") {
+			isGrounded = false;
+		}
+	}
     // Update is called once per frame
     void Update()
     {
         playerVelocity = GetComponent<Rigidbody>().velocity;
-        playerVelocity.z = 0;
-
-
-        //character jumps
-        if (Input.GetButtonDown("Jump"))
-        {
-            CharacterJump();
-        }
+		playerVelocity.z = 0;
 
 
         if (Input.GetAxis("Horizontal") != 0)
@@ -72,7 +80,12 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed = Mathf.Abs(Input.GetAxis("Horizontal"));
         }
 
-
+		if (isGrounded == true) {
+			//character jumps
+			if (Input.GetButtonDown ("Jump")) {
+				CharacterJump ();
+			}
+		}
     }
 
 
@@ -80,5 +93,5 @@ public class PlayerMovement : MonoBehaviour
     {
         GetComponent<Rigidbody>().velocity = new Vector3(playerVelocity.x, jumpHeight, playerVelocity.z);
     }
-
+		
 }
