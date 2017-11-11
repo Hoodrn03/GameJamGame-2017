@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Tom/Scenes/main.unity
+- path: Assets/Tom/Scenes/menu.unity
   isLoaded: 1
   isActive: 1
