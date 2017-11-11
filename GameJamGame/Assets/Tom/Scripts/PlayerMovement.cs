@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
 
     [SerializeField]
     private float PlayerSpeed;
     [SerializeField]
-    private float jumpHeight;
+    public float jumpHeight;
 
 
     private Vector3 playerVelocity;
@@ -80,5 +79,17 @@ public class PlayerMovement : MonoBehaviour
     {
         GetComponent<Rigidbody>().velocity = new Vector3(playerVelocity.x, jumpHeight, playerVelocity.z);
     }
+
+    /*
+    public float GetJumpHeight()
+    {
+        return jumpHeight;
+    }
+
+    public void SetJumpHeight(float NewJumpHeight)
+    {
+        jumpHeight = NewJumpHeight;
+    }
+    */
 
 }
