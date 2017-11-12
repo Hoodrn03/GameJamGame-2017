@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 309851549}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 309851544}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -297,6 +297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9622b612304ddd646950a2caa1c09913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fFadeSpeed: 0.1
+  fMaxAlphaUpper: 0.5
+  fMaxAlphaLower: 1
+  gravity_IsFlipped: 0
   player: {fileID: 653023397}
 --- !u!1 &416704393
 GameObject:
@@ -584,7 +588,7 @@ GameObject:
   - component: {fileID: 653023403}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1092,7 +1096,7 @@ GameObject:
   - component: {fileID: 1625349439}
   m_Layer: 0
   m_Name: ScreenLower
-  m_TagString: Untagged
+  m_TagString: ScreenLower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,7 +1163,7 @@ Transform:
   m_LocalScale: {x: 24.690742, y: 12.484837, z: 0.46}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694773387
 GameObject:
@@ -1174,7 +1178,7 @@ GameObject:
   - component: {fileID: 1694773388}
   m_Layer: 0
   m_Name: ScreenUpper
-  m_TagString: Untagged
+  m_TagString: ScreenUpper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1241,7 +1245,7 @@ Transform:
   m_LocalScale: {x: 24.690742, y: 12.484837, z: 0.46}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772445516
 GameObject:

@@ -8,7 +8,12 @@ public class GravityFlip : MonoBehaviour
 {
 
     //PlayerMovement PlayerMovement;
-
+    [SerializeField]
+    private float fFadeSpeed;
+    [SerializeField]
+    private float fMaxAlphaUpper;
+    [SerializeField]
+    private float fMaxAlphaLower;
 
     public bool gravity_IsFlipped = false;
 
@@ -24,7 +29,7 @@ public class GravityFlip : MonoBehaviour
     void Start()
     {
         //upper unrendered
-        Renderer ScreenUpperRenderer = GameObject.Find("ScreenUpper").GetComponent<Renderer>();
+        Renderer ScreenUpperRenderer = GameObject.FindWithTag("ScreenUpper").GetComponent<Renderer>();
         ScreenUpperRenderer.enabled = false;
         //upper alpha set to 0
         Color upper_color = ScreenUpperRenderer.material.color;
@@ -32,7 +37,12 @@ public class GravityFlip : MonoBehaviour
         ScreenUpperRenderer.material.color = upper_color;
 
         //lower rendered (default)
+
         //lower alpha set to 1 (default)
+        Renderer ScreenLowerRenderer = GameObject.FindWithTag("ScreenLower").GetComponent<Renderer>();
+        Color lower_color = ScreenLowerRenderer.material.color;
+        lower_color.a = fMaxAlphaLower;
+        ScreenLowerRenderer.material.color = lower_color;
 
 
 
@@ -41,7 +51,7 @@ public class GravityFlip : MonoBehaviour
     private void OnTriggerExit(Collider collider)
     {
   
-        PlayerMovement PlayerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        PlayerMovement PlayerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
         
 
 
@@ -55,7 +65,7 @@ public class GravityFlip : MonoBehaviour
                 gravity_IsFlipped = true;
 
                 //upper rendered
-                Renderer ScreenUpperRenderer = GameObject.Find("ScreenUpper").GetComponent<Renderer>();
+                Renderer ScreenUpperRenderer = GameObject.FindWithTag("ScreenUpper").GetComponent<Renderer>();
                 ScreenUpperRenderer.enabled = true;
 
                 //upper alpha increases to 1
@@ -86,7 +96,7 @@ public class GravityFlip : MonoBehaviour
 
 
                 //lower rendered
-                Renderer ScreenLowerRenderer = GameObject.Find("ScreenLower").GetComponent<Renderer>();
+                Renderer ScreenLowerRenderer = GameObject.FindWithTag("ScreenLower").GetComponent<Renderer>();
                 ScreenLowerRenderer.enabled = true;
 
                 bLowerIncrease = true;
@@ -99,21 +109,21 @@ public class GravityFlip : MonoBehaviour
 
     void UpperIncrease()
     {
-        Renderer ScreenUpperRenderer = GameObject.Find("ScreenUpper").GetComponent<Renderer>();
+        Renderer ScreenUpperRenderer = GameObject.FindWithTag("ScreenUpper").GetComponent<Renderer>();
         Color color = ScreenUpperRenderer.material.color;
-        color.a += 0.1f;
+        color.a += fFadeSpeed;
         ScreenUpperRenderer.material.color = color;
 
-        if (color.a >= 1)
+        if (color.a >= fMaxAlphaUpper)
             bUpperIncrease = false;
           
     }
 
     void LowerDecrease()
     {
-        Renderer ScreenLowerRenderer = GameObject.Find("ScreenLower").GetComponent<Renderer>();
+        Renderer ScreenLowerRenderer = GameObject.FindWithTag("ScreenLower").GetComponent<Renderer>();
         Color color = ScreenLowerRenderer.material.color;
-        color.a -= 0.1f;
+        color.a -= fFadeSpeed;
         ScreenLowerRenderer.material.color = color;
 
         if (color.a <= 0)
@@ -124,9 +134,9 @@ public class GravityFlip : MonoBehaviour
 
     void UpperDecrease()
     {
-        Renderer ScreenUpperRenderer = GameObject.Find("ScreenUpper").GetComponent<Renderer>();
+        Renderer ScreenUpperRenderer = GameObject.FindWithTag("ScreenUpper").GetComponent<Renderer>();
         Color color = ScreenUpperRenderer.material.color;
-        color.a -= 0.1f;
+        color.a -= fFadeSpeed;
         ScreenUpperRenderer.material.color = color;
 
         if (color.a <= 0)
@@ -140,12 +150,12 @@ public class GravityFlip : MonoBehaviour
 
     void LowerIncrease()
     {
-        Renderer ScreenLowerRenderer = GameObject.Find("ScreenLower").GetComponent<Renderer>();
+        Renderer ScreenLowerRenderer = GameObject.FindWithTag("ScreenLower").GetComponent<Renderer>();
         Color color = ScreenLowerRenderer.material.color;
-        color.a += 0.1f;
+        color.a += fFadeSpeed;
         ScreenLowerRenderer.material.color = color;
 
-        if (color.a >= 1)
+        if (color.a >= fMaxAlphaLower)
             bLowerIncrease = false;
         
 
