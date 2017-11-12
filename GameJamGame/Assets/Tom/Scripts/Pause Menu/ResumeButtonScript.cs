@@ -12,7 +12,7 @@ public class ResumeButtonScript : MonoBehaviour {
     void Start()
     {
         KeydownScript = GameObject.Find("KeydownScript").GetComponent<KeydownScript>();
-        PauseMenu = GameObject.Find("Canvas/PauseMenu");
+        PauseMenu = GameObject.FindWithTag("PauseMenu");
     }
 
 

@@ -12,7 +12,7 @@ public class KeydownScript : MonoBehaviour {
     {
         // Setting the pause menu not to show on launch
 
-        PauseMenu = GameObject.Find("Canvas/PauseMenu");
+        PauseMenu = GameObject.FindWithTag("PauseMenu");
         PauseMenu.SetActive( false);
     }
 

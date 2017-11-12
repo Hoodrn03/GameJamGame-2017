@@ -14,8 +14,8 @@ public class QuitButtonScript : MonoBehaviour {
     void Start ()
     {
         KeydownScript = GameObject.Find("KeydownScript").GetComponent<KeydownScript>();
-        GravityFlip = GameObject.Find("Water").GetComponent<GravityFlip>();
-        PauseMenu = GameObject.Find("Canvas/PauseMenu");
+        GravityFlip = GameObject.FindWithTag("Water").GetComponent<GravityFlip>();
+        PauseMenu = GameObject.FindWithTag("PauseMenu");
     }
 
 
