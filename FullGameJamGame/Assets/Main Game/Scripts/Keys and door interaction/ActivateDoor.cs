@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActivateDoor : MonoBehaviour {
 
@@ -10,8 +11,10 @@ public class ActivateDoor : MonoBehaviour {
 	[SerializeField]
 	private GameObject gameManager;
 
-	// Use this for initialization
-	void Start () {
+    GravityFlip GravityFlip;
+
+    // Use this for initialization
+    void Start () {
 
 		gameManager = GameObject.FindWithTag ("GameManager");
 
@@ -33,8 +36,12 @@ public class ActivateDoor : MonoBehaviour {
 				// Load Next Level... 
 
 				Debug.Log("Progress...");
+                GravityFlip = GameObject.FindWithTag("Water").GetComponent<GravityFlip>();
+                GravityFlip.gravity_IsFlipped = false;
+                Physics.gravity = new Vector3(0, -9.81f, 0);
+                SceneManager.LoadScene("finish");
 
-			}
+            }
 
 		}
 	}
