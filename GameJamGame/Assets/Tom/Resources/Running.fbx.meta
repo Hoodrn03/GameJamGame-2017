@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2d02181de3428ee4d8d60e8ec3ac8de9
-timeCreated: 1510420904
+guid: 2bf6aa4a7da704445afba3db507af5d7
+timeCreated: 1510447645
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -72,7 +72,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: mixamorig:Hips/mixamorig:Spine
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 

@@ -10,7 +10,7 @@ public class GravityFlip : MonoBehaviour
     //PlayerMovement PlayerMovement;
 
 
-    bool gravity_IsFlipped = false;
+    public bool gravity_IsFlipped = false;
 
     bool bUpperIncrease = false;
     bool bLowerDecrease = false;
@@ -146,7 +146,7 @@ public class GravityFlip : MonoBehaviour
         ScreenLowerRenderer.material.color = color;
 
         if (color.a >= 1)
-            bLowerDecrease = false;
+            bLowerIncrease = false;
         
 
     }
@@ -178,7 +178,7 @@ public class GravityFlip : MonoBehaviour
         }
 
         //Lower alpha increase to 1
-        if (bLowerDecrease == true)
+        if (bLowerIncrease == true)
         {
             LowerIncrease();
         }
