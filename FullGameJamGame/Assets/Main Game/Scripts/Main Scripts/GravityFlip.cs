@@ -51,7 +51,7 @@ public class GravityFlip : MonoBehaviour
     private void OnTriggerExit(Collider collider)
     {
   
-        PlayerMovement PlayerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+		PlayerMovement PlayerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
         
 
 

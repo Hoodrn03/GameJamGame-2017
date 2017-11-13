@@ -66,10 +66,12 @@ public class EnemyMovement : MonoBehaviour
 	// Used to kill the player if they get too close. 
 
     void OnTriggerEnter(Collider other)
-    {
+	{
 		if (other.name == "Player")
 			
             // Respawn Player ...
+
+			player.GetComponent<Respawn> ().spawnPlayer ();
 
 			Debug.Log ("player Respawned");
 		

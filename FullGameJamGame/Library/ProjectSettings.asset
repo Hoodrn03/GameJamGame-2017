@@ -590,9 +590,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: e9d49c29-5bcf-429a-abf9-ed61c5f6a064
-  projectName: GameJamGame
-  organizationId: tomwoodley
+  cloudProjectId: 44ebe8cb-6420-4996-b140-b1efbaad3cfd
+  projectName: GameJamGame (1)
+  organizationId: hoodrn03
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

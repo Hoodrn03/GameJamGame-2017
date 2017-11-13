@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: bf01bf9388c1c3f4db93de3f3d75a66e
+timeCreated: 1510503884
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: House
+    100002: House001
+    100004: //RootNode
+    100006: rock004
+    100008: Rock005
+    100010: rock005
+    100012: Rock006
+    100014: Rock007
+    100016: Rock008
+    100018: Rock009
+    100020: Rock01
+    100022: Rock010
+    100024: Rock02
+    100026: Rock03
+    100028: ShortBuilding002
+    100030: ShortBuilding003
+    400000: House
+    400002: House001
+    400004: //RootNode
+    400006: rock004
+    400008: Rock005
+    400010: rock005
+    400012: Rock006
+    400014: Rock007
+    400016: Rock008
+    400018: Rock009
+    400020: Rock01
+    400022: Rock010
+    400024: Rock02
+    400026: Rock03
+    400028: ShortBuilding002
+    400030: ShortBuilding003
+    2300000: House
+    2300002: House001
+    2300004: rock004
+    2300006: Rock005
+    2300008: rock005
+    2300010: Rock006
+    2300012: Rock007
+    2300014: Rock008
+    2300016: Rock009
+    2300018: Rock01
+    2300020: Rock010
+    2300022: Rock02
+    2300024: Rock03
+    2300026: ShortBuilding002
+    2300028: ShortBuilding003
+    3300000: House
+    3300002: House001
+    3300004: rock004
+    3300006: Rock005
+    3300008: rock005
+    3300010: Rock006
+    3300012: Rock007
+    3300014: Rock008
+    3300016: Rock009
+    3300018: Rock01
+    3300020: Rock010
+    3300022: Rock02
+    3300024: Rock03
+    3300026: ShortBuilding002
+    3300028: ShortBuilding003
+    4300000: House
+    4300002: Rock01
+    4300004: Rock02
+    4300006: Rock03
+    4300008: ShortBuilding002
+    4300010: rock004
+    4300012: Rock005
+    4300014: ShortBuilding003
+    4300016: Rock006
+    4300018: Rock007
+    4300020: Rock008
+    4300022: House001
+    4300024: rock005
+    4300026: Rock009
+    4300028: Rock010
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

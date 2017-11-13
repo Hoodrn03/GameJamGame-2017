@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - ScreenLower
-  - ScreenUpper
-  - Key
-  - Enemy
-  - Water
-  - PauseMenu
-  - EnemySpawn
+  tags: []
   layers:
   - Default
   - TransparentFX
