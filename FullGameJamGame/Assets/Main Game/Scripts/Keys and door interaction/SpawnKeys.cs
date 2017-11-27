@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------
+//                      Header
+//
+//      This is used to spawn the keys at certain
+//      points within the map. 
+//--------------------------------------------------------
+
+
 public class SpawnKeys : MonoBehaviour {
 
 
@@ -9,12 +17,14 @@ public class SpawnKeys : MonoBehaviour {
 	[SerializeField]
 	private GameObject gameManager;
 
+    // This is the gameObject that will be spawned. 
 	[SerializeField]
 	private GameObject key;
 
 	// Use this for initialization
 	void Start () {
 
+        // This finds the object marked with the gameManager tag.
 		gameManager = GameObject.FindWithTag ("GameManager");
 
 		// This will spawn the keys at the very beggining of the game.
@@ -32,8 +42,13 @@ public class SpawnKeys : MonoBehaviour {
 		// This will add to the total number of keys.
 		gameManager.GetComponent<TotalNumberOfKeys> ().addToNumberOfKeys ();
 
-		// THis will create a new instance of the key prefab. 
+		// This will create a new instance of the key prefab. 
 		Instantiate (key, this.transform);
 	}
-		
 }
+
+//--------------------------------------------------------
+//                      Footer 
+//
+//           Code Written By Ryan Hood
+//--------------------------------------------------------

@@ -2,18 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------
+//                      Header
+//
+//      This will be used to check if the player has 
+//      entered the key's radius.
+//
+//--------------------------------------------------------
+
 public class KeyCollidesWIthPlayer : MonoBehaviour {
 
-	[SerializeField]
-	private GameObject player; 
+    // This will hold a refernce to the player's game object. 
 
-	[SerializeField]
+    [SerializeField]
+	private GameObject player;
+
+    // This will hold a refernce to the gameManager object. 
+
+    [SerializeField]
 	private GameObject gameManager;
+
+
 
 	// Use this for initialization
 	void Start () {
 
-		gameManager = GameObject.FindWithTag ("GameManager");
+        // This looks for the object marked with the gameManager tag.
+
+        gameManager = GameObject.FindWithTag ("GameManager");
 
 	}
 	
@@ -30,14 +46,20 @@ public class KeyCollidesWIthPlayer : MonoBehaviour {
 
 		if (other.name == "Player")
 		{
+            // This will get access to the gameManager and use one of it's scripts increasing the 
+            // number of the keys the player has collected. 
+
 			gameManager.GetComponent<KeyTracker> ().addToCollectedKeys ();
 
 			// This destroys this instance of the game object. 
 
 			Destroy (this.gameObject);
 		}
-		
-
 	}
-
 }
+
+//--------------------------------------------------------
+//                  Footer 
+//  
+//          Code Written By Ryan Hood
+//--------------------------------------------------------

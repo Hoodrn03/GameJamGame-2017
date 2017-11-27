@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------
+//                  Header
+//
+//      Used to exit the game. 
+//
+//--------------------------------------------------------
+
 public class ExitScript : MonoBehaviour {
 
-
+    // When a button is pressed: 
     public void OnClick()
     {
+
+        // This will exit the application 
         Application.Quit();
     }
 	// Use this for initialization
@@ -19,3 +28,9 @@ public class ExitScript : MonoBehaviour {
 		
 	}
 }
+
+//--------------------------------------------------------
+//                  Footer 
+//
+//          Code Written By Tom Woodley
+//--------------------------------------------------------

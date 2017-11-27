@@ -2,17 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------
+//                      Header
+//
+//     This is used to make the player move and 
+//      allows them to jump. 
+//
+//--------------------------------------------------
+
 public class PlayerMovement : MonoBehaviour
 {
 
+    // Used to as a value for the player's Speed.
 	[SerializeField]
 	private float PlayerSpeed;
-	[SerializeField]
+
+    // Used to as a value for the player's Jump Height.
+    [SerializeField]
 	public float jumpHeight;
 
-
+    // Used to reference gravity flip.
 	GravityFlip GravityFlip;
 
+    // Used to control the player's velocity.
 	private Vector3 playerVelocity;
 
 
@@ -33,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 	private Quaternion rotationAmount;
 	private Vector3 displacementAmount;
 
+    // Used to check weather the player is in the up or down world.
 	private bool HasRotated1 = false;
 	private bool HasRotated2 = true;
 
@@ -40,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-
+        // These are used for the default sets and gets. 
 		currentScale = transform.localScale;
 
 		playerVelocity = GetComponent<Rigidbody>().velocity;
@@ -143,3 +156,9 @@ public class PlayerMovement : MonoBehaviour
 		transform.localScale = currentScale;
 	}
 }
+
+//--------------------------------------------------------
+//                         Header
+//
+//              Code Written By Ben Sparkes 
+//--------------------------------------------------------

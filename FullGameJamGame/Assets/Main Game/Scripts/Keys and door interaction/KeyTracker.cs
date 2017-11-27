@@ -2,7 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------
+//                      Header
+//
+//      This is used to keep track of the total number 
+//      of collected keys. 
+//--------------------------------------------------------
+
 public class KeyTracker : MonoBehaviour {
+
+    // This is a value for the number of collected keys, it will increase
+    // if the player collides with a key. 
 
 	[SerializeField]
 	private int collectedKeys = 0;
@@ -30,6 +40,10 @@ public class KeyTracker : MonoBehaviour {
 	{
 		return collectedKeys;
 	}
-
-
 }
+
+//--------------------------------------------------------
+//                      Footer 
+//
+//            Code Written By Ryan Hood 
+//--------------------------------------------------------
