@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f5316afe2768404469fc8eba2f3c0281
+timeCreated: 1511878557
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sophia
+  fontNames:
+  - Sophia
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

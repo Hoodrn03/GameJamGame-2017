@@ -34,6 +34,17 @@ public class CameraMove : MonoBehaviour {
         // This will update the camera's current possition. 
         transform.position = playerObj.transform.position + cameraOffSet;
 	}
+
+    public Vector3 GetCameraOffSet()
+    {
+        return cameraOffSet;
+    }
+
+    public void SetCameraOffSet(Vector3 newCameraOffSet)
+    {
+        cameraOffSet = newCameraOffSet;
+    }
+        
 }
 
 //--------------------------------------------------------

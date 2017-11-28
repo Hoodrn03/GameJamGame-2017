@@ -27,15 +27,15 @@ public class GravityFlip : MonoBehaviour
     private float fMaxAlphaLower;
 
     // This is used to check weather or not the gravity has been flipped or not. 
-    public bool gravity_IsFlipped = false;
+    private bool gravity_IsFlipped;
 
     // This is used to change which affect is displayed on the screen, this one is for the upper screen.
-    bool bUpperDecrease = false;
-    bool bUpperIncrease = false;
+    private bool bUpperDecrease = false;
+    private bool bUpperIncrease = false;
 
     // This is used to change which affect is displayed on the screen, this one is for the lower screen.
-    bool bLowerDecrease = false;
-    bool bLowerIncrease = false;
+    private bool bLowerDecrease = false;
+    private bool bLowerIncrease = false;
 
     // This will hold a reference to the player's game object.
     [SerializeField]
@@ -44,6 +44,24 @@ public class GravityFlip : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        ResetFlip();
+    }
+
+    // Used to reset alpha values to initiation
+    public void ResetFlip()
+    {
+        Renderer BackgroundLightRenderer = GameObject.FindWithTag("BackgroundLight").GetComponent<Renderer>();
+        Renderer BackgroundDarkRenderer = GameObject.FindWithTag("BackgroundDark").GetComponent<Renderer>();
+        BackgroundLightRenderer.enabled = true;
+        BackgroundDarkRenderer.enabled = false;
+
+
+        gravity_IsFlipped = false;
+        Physics.gravity = new Vector3(0, -9.81f, 0);
+
+        CameraMove CameraMove = GameObject.FindWithTag("MainCamera").GetComponent<CameraMove>();
+        CameraMove.SetCameraOffSet(new Vector3(0, 3.5f, -8));
+
         //upper unrendered
         Renderer ScreenUpperRenderer = GameObject.FindWithTag("ScreenUpper").GetComponent<Renderer>();
         ScreenUpperRenderer.enabled = false;
@@ -60,7 +78,18 @@ public class GravityFlip : MonoBehaviour
         Color lower_color = ScreenLowerRenderer.material.color;
         lower_color.a = fMaxAlphaLower;
         ScreenLowerRenderer.material.color = lower_color;
+
+        PlayerMovement PlayerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+        PlayerMovement.ResetVelocity();
+
     }
+
+    // Used to get is the gravity is currently flipped
+    public bool GetGravity_IsFlipped()
+    {
+        return gravity_IsFlipped;
+    }
+
 
 
     // This will trigger when the player collides with whatever the script is attacthed to. 
@@ -69,18 +98,24 @@ public class GravityFlip : MonoBehaviour
         
         // This will get access to the player movement script.
 		PlayerMovement PlayerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
-        
+        CameraMove CameraMove = GameObject.FindWithTag("MainCamera").GetComponent<CameraMove>();
+        Renderer BackgroundLightRenderer = GameObject.FindWithTag("BackgroundLight").GetComponent<Renderer>();
+        Renderer BackgroundDarkRenderer = GameObject.FindWithTag("BackgroundDark").GetComponent<Renderer>();
+
         // If the collider is the player : 
         if (collider.name == "Player")
         {
-
+            
             // This will reverse the player's jump height so that it will be the inverse of what it currently is.
             PlayerMovement.jumpHeight = -PlayerMovement.jumpHeight;
 
             // If gravity flip is currently false : 
             if (gravity_IsFlipped == false)
             {
+                BackgroundLightRenderer.enabled = false;
+                BackgroundDarkRenderer.enabled = true;
                 // Changes the current value for gravity. So the player goes up. 
+                CameraMove.SetCameraOffSet(new Vector3(0, -2.5f, -8));
                 Physics.gravity = new Vector3(0, 9.81f, 0);
                 
                 // Then gravity flip is changed to true.  
@@ -102,12 +137,14 @@ public class GravityFlip : MonoBehaviour
             // Otherwise : 
             else
             {
-
+                BackgroundLightRenderer.enabled = true;
+                BackgroundDarkRenderer.enabled = false;
                 // Gravity flip is changed to false.
                 gravity_IsFlipped = false;
 
                 // and gravity is reset to its origional value.
                 Physics.gravity = new Vector3(0, -9.81f, 0);
+                CameraMove.SetCameraOffSet(new Vector3(0, 3.5f, -8));
 
                 //upper alpha decrease to 0
                 //upper unrendered
@@ -220,6 +257,7 @@ public class GravityFlip : MonoBehaviour
         }
     }
 
+    
 
     // Update is called once per frame
     void Update()

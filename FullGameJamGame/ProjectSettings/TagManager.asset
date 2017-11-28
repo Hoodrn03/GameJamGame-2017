@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Platform
+  - GameManager
+  - PauseMenu
+  - ScreenLower
+  - EnemySpawn
+  - Enemy
+  - Water
+  - ScreenUpper
+  - BackgroundDark
+  - BackgroundLight
   layers:
   - Default
   - TransparentFX

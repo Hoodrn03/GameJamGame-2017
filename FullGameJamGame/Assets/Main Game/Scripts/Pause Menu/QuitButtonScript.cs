@@ -45,8 +45,7 @@ public class QuitButtonScript : MonoBehaviour {
         KeydownScript.isPaused = false;
         PauseMenu.SetActive(false);
         Time.timeScale = 1;
-        GravityFlip.gravity_IsFlipped = false;
-        Physics.gravity = new Vector3(0, -9.81f, 0);
+        GravityFlip.ResetFlip();
     }
 	
 	// Update is called once per frame

@@ -48,11 +48,13 @@ public class Respawn : MonoBehaviour
 	public int spawnPlayer()
 	{
         // This sets the local transform equal to the spawnpos's local posstion.
-		transform.localPosition = spawnpos.transform.position;
+		transform.localPosition = new Vector3(spawnpos.transform.position.x, spawnpos.transform.position.y + 2, spawnpos.transform.position.z);
 
-        // These will reset the gravity 
-        GravityFlip.gravity_IsFlipped = false;
-		Physics.gravity = new Vector3(0, -9.81f, 0);
+        PlayerMovement PlayerMovement = GetComponent<PlayerMovement>();
+        //Swaps the jump height otherwise the player will try and jump the wrong way
+        PlayerMovement.SwapJumpHeight();
+        // Resets all properties changed by gravity flip
+        GravityFlip.ResetFlip();
 
 		return 0;
 	}

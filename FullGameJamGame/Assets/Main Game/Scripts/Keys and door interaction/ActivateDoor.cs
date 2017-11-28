@@ -62,11 +62,7 @@ public class ActivateDoor : MonoBehaviour {
 
                 // This resets the bool isFlipped to false making the player upright.
 
-                GravityFlip.gravity_IsFlipped = false;
-
-                // This sets the player's gravity value to be its origional value.
-
-                Physics.gravity = new Vector3(0, -9.81f, 0);
+                GravityFlip.ResetFlip();
 
                 // This loads the end screen. 
 
